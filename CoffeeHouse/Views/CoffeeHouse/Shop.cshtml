@@ -1,0 +1,365 @@
+﻿
+@{
+    ViewData["Title"] = "Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb" style="background: url(/images_icon/about_us/breadcumb.jpg);">
+    <h2 class="breadcumb-title">Our Shop</h2>
+</div>
+
+<div class="shop py-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="shop-sidebar">
+                    <div class="shop-widget">
+                        <div class="shop-search">
+                            <h4 class="shop-title">Search</h4>
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <button type="search"><i class="icofont-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="shop-widget">
+                        <h4 class="shop-title">Category</h4>
+                        <ul>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cat1">
+                                    <label class="form-check-label" for="cat1"> Coffee Bag</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" checked type="checkbox" id="cat2">
+                                    <label class="form-check-label" for="cat2"> Cappucino Coffee</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cat3">
+                                    <label class="form-check-label" for="cat3"> Arabica Roasted</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" checked type="checkbox" id="cat4">
+                                    <label class="form-check-label" for="cat4"> Arabica Green</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cat5">
+                                    <label class="form-check-label" for="cat5"> Cold Brewed</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cat6">
+                                    <label class="form-check-label" for="cat6"> Robusta Roasted</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cat7">
+                                    <label class="form-check-label" for="cat7"> Uncategorized</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="shop-widget">
+                        <h4 class="shop-title">Price Range</h4>
+                        <div class="price-box">
+                            <div class="price-input">
+                                <input type="text" readonly id="price-amount">
+                            </div>
+                            <div class="price-range"></div>
+                        </div>
+                    </div>
+                    <div class="shop-widget">
+                        <h4 class="shop-title">Popular Tags</h4>
+                        <div class="shop-tags">
+                            <a href="#">Coffee</a>
+                            <a href="#">Shop</a>
+                            <a href="#">Cafe</a>
+                            <a href="#">Americano</a>
+                            <a href="#">Black Coffe</a>
+                        </div>
+                    </div>
+                    <div class="widget mt-30 mb-50"
+                         style="background: url(/images_icon/shop/widget.jpg);">
+                        <div class="widget-content">
+                            <h3>Get <span>35% Off</span> On All Americano Coffee</h3>
+                            <a href="#" class="theme-btn">Oder Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="col-md-12">
+                    <div class="shop-sort">
+                        <h5>Showing 1-10 of 50 Results</h5>
+                        <div class="shop-sort-box">
+                            <select class="form-select">
+                                <option value="1">Sort By Default</option>
+                                <option value="5">Sort By Featured</option>
+                                <option value="2">Sort By Latest</option>
+                                <option value="3">Sort By Low Price</option>
+                                <option value="4">Sort By High Price</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="shop-item">
+                            <div class="shop-item-img">
+                                <span class="shop-sale">Sale</span>
+                                <img src="~/images_icon/shop/01.png" alt="">
+                                <div class="shop-item-icon">
+                                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                            <div class="shop-item-info">
+                                <div class="shop-star">
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                </div>
+                                <a href="#">
+                                    <h4 class="shop-item-content">Los Planes</h4>
+                                </a>
+                                <div class="shop-item-price"><del>$100</del>60</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="shop-item">
+                            <div class="shop-item-img">
+                                <img src="~/images_icon/shop/02.png" alt="">
+                                <div class="shop-item-icon">
+                                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                            <div class="shop-item-info">
+                                <div class="shop-star">
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                </div>
+                                <a href="#">
+                                    <h4 class="shop-item-content">Saint Helena</h4>
+                                </a>
+                                <div class="shop-item-price"><del>$100</del>60</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="shop-item">
+                            <div class="shop-item-img">
+                                <img src="~/images_icon/shop/03.png" alt="">
+                                <div class="shop-item-icon">
+                                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                            <div class="shop-item-info">
+                                <div class="shop-star">
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                </div>
+                                <a href="#">
+                                    <h4 class="shop-item-content">Kona Peaberry</h4>
+                                </a>
+                                <div class="shop-item-price"><del>$100</del>60</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="shop-item">
+                            <div class="shop-item-img">
+                                <img src="~/images_icon/shop/04.png" alt="">
+                                <div class="shop-item-icon">
+                                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                            <div class="shop-item-info">
+                                <div class="shop-star">
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                </div>
+                                <a href="#">
+                                    <h4 class="shop-item-content">Blue Mountain</h4>
+                                </a>
+                                <div class="shop-item-price"><del>$100</del>60</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="shop-item">
+                            <div class="shop-item-img">
+                                <img src="~/images_icon/shop/05.png" alt="">
+                                <div class="shop-item-icon">
+                                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                            <div class="shop-item-info">
+                                <div class="shop-star">
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                </div>
+                                <a href="#">
+                                    <h4 class="shop-item-content">Ospina</h4>
+                                </a>
+                                <div class="shop-item-price"><del>$100</del>60</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="shop-item">
+                            <div class="shop-item-img">
+                                <img src="~/images_icon/shop/06.png" alt="">
+                                <div class="shop-item-icon">
+                                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                            <div class="shop-item-info">
+                                <div class="shop-star">
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                </div>
+                                <a href="#">
+                                    <h4 class="shop-item-content">Kopi Luwak</h4>
+                                </a>
+                                <div class="shop-item-price"><del>$100</del>60</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="shop-item">
+                            <div class="shop-item-img">
+                                <span class="shop-sale">Sale</span>
+                                <img src="~/images_icon/shop/07.png" alt="">
+                                <div class="shop-item-icon">
+                                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                            <div class="shop-item-info">
+                                <div class="shop-star">
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                </div>
+                                <a href="#">
+                                    <h4 class="shop-item-content">Cappucino Coffee</h4>
+                                </a>
+                                <div class="shop-item-price"><del>$100</del>60</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="shop-item">
+                            <div class="shop-item-img">
+                                <img src="~/images_icon/shop/08.png" alt="">
+                                <div class="shop-item-icon">
+                                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                            <div class="shop-item-info">
+                                <div class="shop-star">
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                </div>
+                                <a href="#">
+                                    <h4 class="shop-item-content">Black Ivory</h4>
+                                </a>
+                                <div class="shop-item-price"><del>$100</del>60</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="shop-item">
+                            <div class="shop-item-img">
+                                <img src="~/images_icon/shop/09.png" alt="">
+                                <div class="shop-item-icon">
+                                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                            <div class="shop-item-info">
+                                <div class="shop-star">
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                    <i class="icofont-star"></i>
+                                </div>
+                                <a href="#">
+                                    <h4 class="shop-item-content">Americano Coffe</h4>
+                                </a>
+                                <div class="shop-item-price"><del>$100</del>60</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <div aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">
+                                        <i class="fa-sharp fa-solid fa-arrow-left"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">
+                                        <i class="fa-sharp fa-solid fa-arrow-right"></i></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
