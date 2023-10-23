@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "Join";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="menu py-120" style="background-image: url(/images_icon/menu/background/bg.jpeg)">
+    <div class="container">
+        <div class="col-lg-8 mx-auto reservation-wrapper-a">
+            <div class="row">
+                    <div class="text-login text-center">
+                        <h2 class="text-title">Create an account</h2>
+                    </div>
+                    <div class="col-lg-12 mx-auto">
+                        <form action="" id="join-form">
+                            <div class="col">
+                                <div class="reservation-content">
+                                    <div class="mx-auto col-lg-9">
+                                        <label class="text-join">Personal Information</label>
+                                        <div class="form-group">
+                                            <input type="text" name="firstname" class="form-control join-now"
+                                                placeholder="First name">
+                                            <div class="error-message" id="first-error"></div>
+                                            <input type="text" name="lastname" class="form-control join-now"
+                                                placeholder="Last name">
+                                            <div class="error-message" id="last-error"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mx-auto col-lg-9">
+                                        <label class="text-join">Account Security</label>
+                                        <div class="form-group">
+                                            <input type="text" name="email" class="form-control join-now"
+                                                placeholder="Email address">
+                                            <div class="error-message" id="email-error"></div>
+                                            <input type="text" name="user" class="form-control join-now"
+                                                placeholder="User name">
+                                            <div class="error-message" id="user-error"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mx-auto col-lg-9 font-eye">
+                                        <div class="form-group">
+                                            <input type="text" name="password" class="form-control join-now"
+                                                placeholder="Password" id="password">
+                                            <i class="eye-icon fa-regular fa-eye-slash" id="toggle-password"></i>
+                                            <p>Create a password 8 to 25 characters long that includes at least 1
+                                                uppercase and 1 lowercase letter, 1 number and 1 special character
+                                            </p>
+                                            <ul id="password-validation" style="list-style: none; color: red;"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="mx-auto col-lg-9">
+                                        <p class="join-collect">COLLECT MORE STARS & EARN REWARDS</p>
+                                        <p>Email is a great way to know about offers and what’s new from Coffee
+                                            House.</p>
+                                    </div>
+                                </div>
+                                <div class="mx-auto col-lg-9 ">
+                                    <div class="form-check join-email">
+                                        <input class="form-check-input" type="checkbox" id="cat1">
+                                        <label class="form-check-label" for="cat1"> Yes, I’d like email
+                                            from Coffee
+                                            House</label>
+                                        <p>Know about initiatives, announcements and product
+                                            offers.</p>
+                                    </div>
+                                </div>
+                                <div class="mx-auto col-lg-9">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="cat2">
+                                        <label class="form-check-label" for="cat2"> I agree to the
+                                            Coffee House Terms and the Coffee House Card Terms and have read the
+                                            Coffee House Privacy Statement</label>
+                                    </div>
+                                </div>
+                                <div class="mx-auto login-btn">
+                                    <a href="#" class="logintheme-btn" id="submit-button">Join now</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
