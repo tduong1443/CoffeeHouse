@@ -1,4 +1,4 @@
-﻿using CoffeeHouse.Models;
+using CoffeeHouse.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
 
@@ -32,14 +32,14 @@ namespace CoffeeHouse.Data
             );
 
             modelBuilder.Entity<Staff>().HasData(
-                new Staff { IdSatff = "S01", FullName = "Nguyen Thuy Duong", Birthday = DateTime.Parse("2003-4-14"), Email = "duong@gmail.com", Phone = "0111333444", Address = "Thai Binh", Position = "Manager" },
-                new Staff { IdSatff = "S02", FullName = "Hoang Duong", Birthday = DateTime.Parse("2003-10-18"), Email = "hduong@gmail.com", Phone = "0222444555", Address = "Ha Noi", Position = "Staff" },
-                new Staff { IdSatff = "S03", FullName = "Nguyen Gia Phu", Birthday = DateTime.Parse("2003-12-30"), Email = "phu@gmail.com", Phone = "0111322666", Address = "Quang Ninh", Position = "Staff" }
+                new Staff { IdSatff = "S01", FullName = "Nguyen Thuy Duong", Birthday = DateTime.Parse("2003-4-14"), Email = "duong@gmail.com", Phone = "0111333444", Address = "Thai Binh", Position = "Manager", UserName = "duongnt", PassWord = "Duong@123" },
+                new Staff { IdSatff = "S02", FullName = "Hoang Duong", Birthday = DateTime.Parse("2003-10-18"), Email = "hduong@gmail.com", Phone = "0222444555", Address = "Ha Noi", Position = "Staff", UserName = "duongh", PassWord = "Hduong@123" },
+                new Staff { IdSatff = "S03", FullName = "Nguyen Gia Phu", Birthday = DateTime.Parse("2003-12-30"), Email = "phu@gmail.com", Phone = "0111322666", Address = "Quang Ninh", Position = "Staff", UserName = "phung", PassWord = "Phu@123" }
             );
 
             modelBuilder.Entity<Customer>().HasData(
-                new Customer { IdCustomer= "Cs01", FullName = "Nguyen Van Tuyen", Birthday = DateTime.Parse("2003-1-1"), Email = "tuyen@gmail.com", Phone = "0111444666", Address = "Ha Noi" },
-                new Customer { IdCustomer= "Cs02", FullName = "Pham Huu Quang", Birthday = DateTime.Parse("2003-11-1"), Email = "quang@gmail.com", Phone = "0111444777", Address = "Thai Binh" }
+                new Customer { IdCustomer= "Cs01", FirstName = "Tuyen", LastName = "Nguyen Van", UserName = "tuyennv", PassWord = "Tuyen@123", Email = "tuyen@gmail.com"},
+                new Customer { IdCustomer= "Cs02", FirstName = "Quang", LastName = "Pham Huu", UserName = "quangph", PassWord = "Quang@123", Email = "quang@gmail.com" }
             );
 
             modelBuilder.Entity<OrderInfo>().HasData(
