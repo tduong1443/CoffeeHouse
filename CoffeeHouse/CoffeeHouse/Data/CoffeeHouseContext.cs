@@ -1,4 +1,6 @@
 using CoffeeHouse.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
 
@@ -17,6 +19,8 @@ namespace CoffeeHouse.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Category>().HasData(
                 new Category { IdCategory = "C01", Name = "Capuchino" },
                 new Category { IdCategory = "C02", Name = "Cafe" },
@@ -32,14 +36,14 @@ namespace CoffeeHouse.Data
             );
 
             modelBuilder.Entity<Staff>().HasData(
-                new Staff { IdSatff = "S01", FullName = "Nguyen Thuy Duong", Birthday = DateTime.Parse("2003-4-14"), Email = "duong@gmail.com", Phone = "0111333444", Address = "Thai Binh", Position = "Manager", UserName = "duongnt", PassWord = "Duong@123" },
-                new Staff { IdSatff = "S02", FullName = "Hoang Duong", Birthday = DateTime.Parse("2003-10-18"), Email = "hduong@gmail.com", Phone = "0222444555", Address = "Ha Noi", Position = "Staff", UserName = "duongh", PassWord = "Hduong@123" },
-                new Staff { IdSatff = "S03", FullName = "Nguyen Gia Phu", Birthday = DateTime.Parse("2003-12-30"), Email = "phu@gmail.com", Phone = "0111322666", Address = "Quang Ninh", Position = "Staff", UserName = "phung", PassWord = "Phu@123" }
+                new Staff { IdSatff = 001, FullName = "Nguyen Thuy Duong", Birthday = DateTime.Parse("2003-4-14"), Email = "duong@gmail.com", Phone = "0111333444", Address = "Thai Binh", Position = "Manager"},
+                new Staff { IdSatff = 002, FullName = "Hoang Duong", Birthday = DateTime.Parse("2003-10-18"), Email = "hduong@gmail.com", Phone = "0222444555", Address = "Ha Noi", Position = "Staff"},
+                new Staff { IdSatff = 003, FullName = "Nguyen Gia Phu", Birthday = DateTime.Parse("2003-12-30"), Email = "phu@gmail.com", Phone = "0111322666", Address = "Quang Ninh", Position = "Staff"}
             );
 
             modelBuilder.Entity<Customer>().HasData(
-                new Customer { IdCustomer= "Cs01", FirstName = "Tuyen", LastName = "Nguyen Van", UserName = "tuyennv", PassWord = "Tuyen@123", Email = "tuyen@gmail.com"},
-                new Customer { IdCustomer= "Cs02", FirstName = "Quang", LastName = "Pham Huu", UserName = "quangph", PassWord = "Quang@123", Email = "quang@gmail.com" }
+                new Customer { IdCustomer= 001, Fullname = "Nguyen Van Tuyen", Email = "tuyen@gmail.com",Birthday = DateTime.Parse("2003-1-1"), Address = "Ha Noi", Phone = "112233556677"},
+                new Customer { IdCustomer= 002, Fullname = "Pham Huu Quang", Email = "quang@gmail.com", Birthday = DateTime.Parse("2003-2-2"), Address = "Thai Binh", Phone = "00044455588"}
             );
 
             modelBuilder.Entity<OrderInfo>().HasData(
@@ -50,10 +54,18 @@ namespace CoffeeHouse.Data
             );
 
             modelBuilder.Entity<Orders>().HasData(
-                new Orders { IdOrders = "Or01", IdCustomer= "Cs01", IdStaff = "S03", OrderDate = DateTime.Parse("2023-1-1"), Note = "Đã thanh toán" },
-                new Orders { IdOrders = "Or02", IdCustomer= "Cs02", IdStaff = "S01", OrderDate = DateTime.Parse("2023-11-11"), Note = "Chưa thanh toán" },
-                new Orders { IdOrders = "Or03", IdCustomer= "Cs02", IdStaff = "S02", OrderDate = DateTime.Parse("2023-2-2"), Note = "Đã thanh toán" },
-                new Orders { IdOrders = "Or04", IdCustomer= "Cs01", IdStaff = "S01", OrderDate = DateTime.Parse("2023-4-4"), Note = "Đã thanh toán" }
+                new Orders { IdOrders = "Or01", IdCustomer= 001, IdStaff = 003, OrderDate = DateTime.Parse("2023-1-1"), Note = "Đã thanh toán" },
+                new Orders { IdOrders = "Or02", IdCustomer= 002, IdStaff = 001, OrderDate = DateTime.Parse("2023-11-11"), Note = "Chưa thanh toán" },
+                new Orders { IdOrders = "Or03", IdCustomer= 002, IdStaff = 002, OrderDate = DateTime.Parse("2023-2-2"), Note = "Đã thanh toán" },
+                new Orders { IdOrders = "Or04", IdCustomer= 001, IdStaff = 001, OrderDate = DateTime.Parse("2023-4-4"), Note = "Đã thanh toán" }
+            );
+
+            modelBuilder.Entity<Users>().HasData(
+                new Users { Username = "duongnt", Password = "Duong@123", Role = "Admin"},
+                new Users { Username = "duongh", Password = "Hduong@123", Role = "Admin"},
+                new Users { Username = "phung", Password = "Phu@1234", Role = "Admin"},
+                new Users { Username = "tuyennv", Password = "Tuyen@123", Role = "Customer"},
+                new Users { Username = "quangph", Password = "Quang@123", Role = "Customer"}
             );
         }
     }
