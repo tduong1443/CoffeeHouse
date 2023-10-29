@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Category>
+<div id="content">
+    <h3 style="margin-top: 50px; text-align: center; padding-bottom: 50px">Category List</h3>
+    <table class="table table-striped" style="margin: 0 auto; width: 60%">
+        <thead style="background-color: black; color: white">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Function</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var s in Model)
+            {
+                <tr>
+                    <td>@s.IdCategory</td>
+                    <td>@s.Name</td>
+                    <td>
+                        <a style="background-color: green; text-decoration: none; color: white; padding: 5px 10px" asp-action="Edit" asp-route-id="@s.IdCategory">Edit</a>
+                        <a style="background-color: red; text-decoration: none; color: white; padding: 5px 10px" asp-action="Delete" asp-route-id="@s.IdCategory">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-action="Create" class="btn btn-primary" style="margin-top: 20px; padding: 10px; margin-left: 250px">Create New Category</a>
+</div>

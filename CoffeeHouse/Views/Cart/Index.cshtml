@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Shop_Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model CartItem
+
+<div class="breadcumb" style="background: url(/images_icon/about_us/breadcumb.jpg);">
+    <h2 class="breadcumb-title">Shop Cart</h2>
+</div>
+
+<div class="shop-cart py-120">
+    <div class="container">
+        <div class="shop-cart-wrapper">
+            <div class="table-reponsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Sub Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if(Model.Item.Count() > 0)
+                        {
+                            foreach(var item in Model.Item)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="cart-img">
+                                            <img src="~/images_icon/shop/03.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h5></h5>
+                                    </td>
+                                    <td>
+                                        <div class="cart-price">
+                                            <span>@item.Price</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart-quantity">
+                                            <button class="minus-btn">
+                                                <i class="fa-sharp fa-solid fa-minus"></i>
+                                            </button>
+                                            <input class="quantity" type="text" value="1" disabled="">
+                                            <button class="plus-btn"><i class="fa-sharp fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart-subtotal">
+                                            <span>@Model.Item.Where(x => x.Id == item.Id).Sum(x => x.Quantity * x.Price).ToString()</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="cart-remove"><i class="fa-sharp fa-solid fa-xmark"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="cart-footer">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="cart-coupon">
+                            <input type="text" class="form-control" placeholder="Your Coupon Code">
+                            <button class="coupon-btn" type="submit">Apply</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-8">
+                        <div class="cart-bil">
+                            <ul>
+                                <li><strong class="cart-sub">Sub Total:</strong><span>$300.00</span></li>
+                                <li><strong class="cart-vat">Vat:</strong><span>$2.00</span></li>
+                                <li><strong class="cart-discount">Discount:</strong><span>$5.00</span></li>
+                                <li class="cart-total"><strong>Total:</strong><span>$297.00</span></li>
+                            </ul>
+                            <div class="text-end">
+                                <a href="#" class="theme-btn">Checkout Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

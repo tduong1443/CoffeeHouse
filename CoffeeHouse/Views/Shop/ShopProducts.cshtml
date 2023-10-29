@@ -1,0 +1,86 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Products>
+
+@foreach(var item in Model)
+{
+    <div class="col-md-6 col-lg-4">
+        <div class="shop-item">
+            <div class="shop-item-img">
+                <span class="shop-sale">Sale</span>
+                <img src="@Url.Content(item.Image)" alt="">
+                <div class="shop-item-icon">
+                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                    <a class="add-to-cart" asp-action="Add" asp-controller="Cart" asp-route-id="@item.IdProduct">
+                        <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="shop-item-info">
+                <div class="shop-star">
+                    <i class="icofont-star"></i>
+                    <i class="icofont-star"></i>
+                    <i class="icofont-star"></i>
+                    <i class="icofont-star"></i>
+                    <i class="icofont-star"></i>
+                </div>
+                <a href="#">
+                    <h4 class="shop-item-content">@item.Name</h4>
+                </a>
+                <div class="shop-item-price"><del>$100</del>@item.Price</div>
+            </div>
+        </div>
+    </div>
+}
+
+@* Paging *@
+
+<div class="pagination">
+    <div aria-label="Page navigation example">
+        <ul class="pagination">
+            @{
+                int numberPage = ViewBag.numberPage;
+                int pageCurrent = ViewBag.pageCurrent;
+
+                if (pageCurrent > 1)
+                {
+                    int prePage = pageCurrent - 1;
+                    <li class="page-item">
+                        <a class="page-link" href="?page=@prePage" aria-label="Previous">
+                            <span aria-hidden="true">
+                                <i class="fa-sharp fa-solid fa-arrow-left"></i>
+                            </span>
+                        </a>
+                    </li>
+                }
+
+                int i;
+                for (i = 1; i <= numberPage; i++)
+                {
+                    if (i == pageCurrent)
+                    {
+                        <li class="page-item active"><a class="page-link" href="?page=@i">@i</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item"><a class="page-link" href="?page=@i">@i</a></li>
+                    }
+                }
+
+                if (pageCurrent > 1 && pageCurrent < numberPage)
+                {
+                    int nextPage = pageCurrent + 1;
+                    <li class="page-item">
+                        <a class="page-link" href="@nextPage" aria-label="Next">
+                            <span aria-hidden="true">
+                                <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                            </span>
+                        </a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>

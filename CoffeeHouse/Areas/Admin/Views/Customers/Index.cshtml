@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Customer>
+<div id="content">
+    <h3 style="margin-top: 50px; text-align: center; padding-bottom: 50px">Customer List</h3>
+    <table class="table table-striped" style="margin: 0 auto; width: 80%">
+        <thead style="background-color: black; color: white">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>Adress</th>
+                <th>Phone</th>
+                <th>Function</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var s in Model)
+            {
+                <tr>
+                    <td>@s.IdCustomer</td>
+                    <td>@s.Fullname</td>
+                    <td>@s.Email</td>
+                    <td>@s.Birthday</td>
+                    <th>@s.Address</th>
+                    <th>@s.Phone</th>
+                    <td>
+                        <a style="background-color: green; text-decoration: none; color: white; padding: 5px 10px" asp-action="Edit" asp-route-id="@s.IdCustomer">Edit</a>
+                        <a style="background-color: red; text-decoration: none; color: white; padding: 5px 10px" asp-action="Delete" asp-route-id="@s.IdCustomer">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-action="Create" class="btn btn-primary" style="margin-top: 20px; padding: 10px; margin-left: 130px">Create New Customer</a>
+</div>
