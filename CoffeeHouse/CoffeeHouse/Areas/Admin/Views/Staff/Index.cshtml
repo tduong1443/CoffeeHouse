@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Staff>
+<div id="content">
+    <h3 style="margin-top: 50px; text-align: center; padding-bottom: 50px">Staff List</h3>
+    <table class="table table-striped" style="margin: 0 auto; width: 80%">
+        <thead style="background-color: black; color: white">
+            <tr>
+                <th>ID</th>
+                <th>Fullname</th>
+                <th>Email</th>
+                <th>Birthđay</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Position</th>
+                <th>Function</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var s in Model)
+            {
+                <tr>
+                    <td>@s.IdStaff</td>
+                    <td>@s.FullName</td>
+                    <td>@s.Email</td>
+                    <td>@s.Birthday</td>
+                    <td>@s.Address</td>
+                    <td>@s.Phone</td>
+                    <td>@s.Position</td>
+                    <td>
+                        <a style="background-color: green; text-decoration: none; color: white; padding: 5px 10px" asp-action="Edit" asp-route-id="@s.IdStaff">Edit</a>
+                        <a style="background-color: red; text-decoration: none; color: white; padding: 5px 10px" asp-action="Delete" asp-route-id="@s.IdStaff">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="pagination">
+        <div aria-label="Page navigation example">
+            <ul class="pagination">
+                @{
+                    int numberPage = ViewBag.numberPage;
+                    int pageCurrent = ViewBag.pageCurrent;
+
+                    if (pageCurrent > 1)
+                    {
+                        int prePage = pageCurrent - 1;
+                        <li class="page-item">
+                            <a class="page-link" href="?page=@prePage" aria-label="Previous">
+                                <span aria-hidden="true">
+                                    ‹
+                                </span>
+                            </a>
+                        </li>
+                    }
+
+                    int i;
+                    for (i = 1; i <= numberPage; i++)
+                    {
+                        if (i == pageCurrent)
+                        {
+                            <li class="page-item active"><a class="page-link" href="?page=@i">@i</a></li>
+                        }
+                        else
+                        {
+                            <li class="page-item"><a class="page-link" href="?page=@i">@i</a></li>
+                        }
+                    }
+
+                    if (pageCurrent > 1 && pageCurrent < numberPage)
+                    {
+                        int nextPage = pageCurrent + 1;
+                        <li class="page-item">
+                            <a class="page-link" href="@nextPage" aria-label="Next">
+                                <span aria-hidden="true">
+                                    ›
+                                </span>
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+    <a asp-action="Create" class="btn btn-primary" style="padding: 10px; margin-left: 120px">Create New Staff</a>
+</div>

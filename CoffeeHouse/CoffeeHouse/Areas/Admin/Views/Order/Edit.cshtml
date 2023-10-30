@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model Orders
+<div class="ms-2 mx-2">
+    <h1 style="margin-top: 50px; text-align: center">Edit</h1>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <form asp-controller="Products" asp-action="Edit" asp-route-id="@Model.IdOrders" method="post" class="mt-3" style="width: 60%;
+        margin: 0 auto; padding-top: 30px">
+        <input type="hidden" asp-for="IdOrders" />
+        <div style="margin-top:10px" class="form-group row">
+            <label asp-for="IdOrders" class="col-sm-2 col-form-label"></label> <div class="col-sm-10">
+                <input asp-for="IdOrders" class="form-control" placeholder="Id Orders">
+            </div>
+            <span asp-validation-for="IdOrders" class="text-danger"></span>
+        </div>
+        <div style="margin-top:10px" class="form-group row">
+            <label asp-for="IdCustomer" class="col-sm-2 col-form-label"></label> <div class="col-sm-10">
+                <input asp-for="IdCustomer" class="form-control" placeholder="Id Customer">
+            </div>
+            <span asp-validation-for="IdCustomer" class="text-danger"></span>
+        </div>
+        <div style="margin-top:10px" class="form-group row">
+            <label asp-for="IdStaff" class="col-sm-2 col-form-label"></label> <div class="col-sm-10">
+                <input asp-for="IdStaff" class="form-control" placeholder="Id Staff">
+            </div>
+            <span asp-validation-for="IdStaff" class="text-danger"></span>
+        </div>
+        <div style="margin-top:10px" class="form-group row">
+            <label asp-for="OrderDate" class="col-sm-2 col-form-label"></label> <div class="col-sm-10">
+                <input asp-for="OrderDate" class="form-control" placeholder="Order Date">
+            </div>
+            <span asp-validation-for="OrderDate" class="text-danger"></span>
+        </div>
+        <div style="margin-top:10px" class="form-group row">
+            <label asp-for="Note" class="col-sm-2 col-form-label"></label> <div class="col-sm-10">
+                <input asp-for="Note" class="form-control" placeholder="Note">
+            </div>
+            <span asp-validation-for="Note" class="text-danger"></span>
+        </div>
+        <div style="margin-top:10px" class="form-group row">
+            <div class="col-sm-10" style="padding: 20px 0">
+                <button type="submit" class="btn btn-primary" style="padding: 10px 40px">Edit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
