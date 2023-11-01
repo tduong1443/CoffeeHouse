@@ -29,19 +29,6 @@ builder.Services.AddMvc().AddViewOptions(options =>
     options.HtmlHelperOptions.ClientValidationEnabled = true;
 });
 
-builder.Services.AddAuthentication("CookieAuthentication")
-    .AddCookie("CookieAuthentication", config =>
-    {
-        config.Cookie.Name = "YourAppName";
-        config.LoginPath = "/Account/Login";
-        config.AccessDeniedPath = "/Account/AccessDenied";
-    });
-
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
-});
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
