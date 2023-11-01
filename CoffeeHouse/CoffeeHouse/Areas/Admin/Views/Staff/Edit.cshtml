@@ -1,26 +1,26 @@
-﻿@{
+@{
     ViewData["Title"] = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-@model Customer
+@model Staff
 <div class="ms-2 mx-2">
     <h1 style="margin-top: 50px; text-align: center">Edit</h1>
     <div asp-validation-summary="All" class="text-danger"></div>
-    <form asp-controller="Category" asp-action="Edit" asp-route-id="@Model.IdCustomer" method="post" class="mt-3" style="width: 60%;
+    <form asp-controller="Staff" asp-action="Edit" asp-route-id="@Model.IdStaff" method="post" class="mt-3" style="width: 60%;
         margin: 0 auto; padding-top: 30px">
-        <input type="hidden" asp-for="IdCustomer" />
+        <input type="hidden" asp-for="IdStaff" />
         <div style="margin-top:10px" class="form-group row">
-            <label asp-for="IdCustomer" class="col-sm-2 col-form-label"></label> <div class="col-sm-10">
-                <input asp-for="IdCustomer" class="form-control" placeholder="Id">
+            <label asp-for="IdStaff" class="col-sm-2 col-form-label"></label> <div class="col-sm-10">
+                <input asp-for="IdStaff" class="form-control" placeholder="Id">
             </div>
-            <span asp-validation-for="IdCustomer" class="text-danger"></span>
+            <span asp-validation-for="IdStaff" class="text-danger"></span>
         </div>
         <div style="margin-top:10px" class="form-group row">
-            <label asp-for="Fullname" class="col-sm-2 col-form-label"></label> <div class="col-sm-10">
-                <input asp-for="Fullname" class="form-control" placeholder="Name">
+            <label asp-for="FullName" class="col-sm-2 col-form-label"></label> <div class="col-sm-10">
+                <input asp-for="FullName" class="form-control" placeholder="Name">
             </div>
-            <span asp-validation-for="Fullname" class="text-danger"></span>
+            <span asp-validation-for="FullName" class="text-danger"></span>
         </div>
         <div style="margin-top:10px" class="form-group row">
             <label asp-for="Email" class="col-sm-2 col-form-label"></label>
