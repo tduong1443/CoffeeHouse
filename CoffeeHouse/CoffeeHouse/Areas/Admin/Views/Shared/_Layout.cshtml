@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -50,7 +50,26 @@
         }
 
     </script>
+   <script>
+        $(document).ready(function () {
+            $(document).on("click", ".page-link", function (e) {
+                e.preventDefault(); // ngăn tải lại trang web
+                var url = $(this).attr("href");
 
-    <script src="~/js/ajax.js"></script>
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    dataType: "html",
+                    success: function (data) { // lệnh yêu cầu thành công
+                        var content = $(data).find("#content");
+                        $("#content").html(content);
+                    },
+                    error: function () {
+                        alert("Đã xảy ra lỗi.");
+                    }
+                });
+            });
+        });
+   </script>
 </body>
 </html>
