@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,16 +24,19 @@
         <div class="loader"></div>
     </div>
 
+    @* Header *@
     <div class="header">
-        <partial name="Header" />
+        <partial name="Header" /> <!--Hiển thị nội dung phần header bằng partialview-->
     </div>
 
+    <!--Main-->
     <div class="main">
-        @RenderBody()
+        @RenderBody() <!--Hiển thị nội dung cho main-->
     </div>
 
+    <!--Footer-->
     <div class="footer">
-        <partial name="Footer" />
+        <partial name="Footer" /> <!--Hiển thị nội dung cho phần Footer bằng partialview-->
     </div>
 
     <a href="#" id="scroll-top"><i class="fa-sharp fa-solid fa-angles-up"></i></a>
@@ -46,8 +49,51 @@
     <script src="~/js/counter-up.js"></script>
     <script src="~/js/jquery.magnific-popup.min.js"></script>
     <script src="~/js/main.js"></script>
-    <script src="~/js/ajax.js"></script>
-   
+   <script>
+        // Paging - Shop
+        $(document).ready(function () {
+            $(document).on("click", ".page-link", function (e) {
+                e.preventDefault(); // ngăn tải lại trang web
+                var url = $(this).attr("href");
+
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    dataType: "html",
+                    success: function (data) { // lệnh yêu cầu thành công
+                        var content = $(data).find("#content");
+                        $("#content").html(content);
+                    },
+                    error: function () {
+                        alert("Đã xảy ra lỗi.");
+                    }
+                });
+            });
+        });
+   </script>
+
+   <script>
+        $(document).ready(function () {
+            $(document).on("click", ".btn", function (e) {
+                e.preventDefault();
+                var url = $(this).attr("href");
+
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    dataType: "html",
+                    success: function (data) {
+                        var content = $(data).find(".table-reponsive");
+                        $(".table-reponsive").html(content);
+                    },
+                    error: function () {
+                        alert("Đã xảy ra lỗi.");
+                    }
+                });
+            });
+        });
+   </script>
+
 </body>
 
 </html>
