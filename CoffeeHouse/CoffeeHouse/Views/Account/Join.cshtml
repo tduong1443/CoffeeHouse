@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Join";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -32,6 +32,10 @@
                                         <div class="form-group">
                                         @Html.TextAreaFor(x=>x.Email, new{@class="form-control join-now", placeholder="Email address",
                                     required="required", autofocus="autofocus", style="height: 60px"})
+                                        @if (ViewData.ModelState.TryGetValue("Email", out var emailErrors) && emailErrors.Errors.Count > 0)
+                                        {
+                                            <span class="text-danger">@emailErrors.Errors[0].ErrorMessage</span>
+                                        }
                                            @*  <input type="text" name="email" class="form-control join-now"
                                                 placeholder="Email address"> *@
                                             <div class="error-message" id="email-error"></div>
@@ -39,9 +43,9 @@
                                     required="required", autofocus="autofocus", style="height: 60px"})
                                             @* <input type="text" name="user" class="form-control join-now"
                                                 placeholder="User name"> *@
-                                        @if (ViewData.ModelState["Username"] != null)
+                                        @if (ViewData.ModelState.TryGetValue("Username", out var usernameErrors) && usernameErrors.Errors.Count > 0)
                                         {
-                                            <span class="text-danger">@ViewData.ModelState["Username"].Errors[0].ErrorMessage</span>
+                                            <span class="text-danger">@usernameErrors.Errors[0].ErrorMessage</span>
                                         }
                                             <div class="error-message" id="user-error"></div>
                                         </div>
@@ -55,6 +59,10 @@
                                             @* <p>Create a password 8 to 25 characters long that includes at least 1
                                                 uppercase and 1 lowercase letter, 1 number and 1 special character
                                             </p> *@
+                                        @if (ViewData.ModelState.TryGetValue("Password", out var passwordErrors) && passwordErrors.Errors.Count > 0)
+                                        {
+                                            <span class="text-danger">@passwordErrors.Errors[0].ErrorMessage</span>
+                                        }
                                             <ul id="password-validation" style="list-style: none; color: red;"></ul>
                                         </div>
                                     </div>
